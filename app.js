@@ -7,6 +7,7 @@ let userScore = 0;
 let pcScore = 0;
 const userScore_class = document.getElementById('userScore')
 const pcScore_class = document.getElementById('pcScore')
+const result_class = document.getElementById('result')
 
 const buttons = document.querySelectorAll("button");
 
@@ -56,7 +57,7 @@ function setWinner(playerChoice, computerChoice) {
   console.log("computerChoice", computerChoice);
 
   if (userScore === 3) {
-    alert('GANASTE! 😀');
+    alert('Llegaste a la puntuacion máxima GANASTE! 😀');
     document.location.reload();
     return true;
 
@@ -75,14 +76,17 @@ function setWinner(playerChoice, computerChoice) {
   ) {
     userScore++
     userScore_class.innerHTML = userScore
+    result_class.innerHTML = 'Ganaste'
     console.log('playerScore => ', userScore);
     console.log('pcScore => ', pcScore)
     return "GANASTE";
   } else if (playerChoice === computerChoice) {
+    result_class.innerHTML = 'Empataste'
     console.log('playerScore => ', userScore);
     console.log('pcScore => ', pcScore)
     return "EMPATASTE";
   } else {
+    result_class.innerHTML = 'Perdiste'
     pcScore++
     pcScore_class.innerHTML = pcScore
     console.log('playerScore => ', userScore);
