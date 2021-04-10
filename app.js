@@ -57,13 +57,13 @@ function setWinner(playerChoice, computerChoice) {
   console.log("computerChoice", computerChoice);
 
   if (userScore === 3) {
-    alert('Llegaste a la puntuacion máxima GANASTE! 😀');
+    alert('Llegaste a la puntuacion máxima, GANASTE! 😀');
     document.location.reload();
     return true;
 
   } else {
     if (pcScore === 3) {
-      alert('PERDISTE ☹️')
+      alert('La pc llegó a la puntacion máxima, PERDISTE ☹️')
       document.location.reload();
       return true;
     }
