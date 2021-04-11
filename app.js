@@ -41,7 +41,7 @@ function startGame(event) {
   //resultElement.textContent = winner;
 }
 
-const possibleChoices = ["rock", "paper", "scissors"];
+const possibleChoices = ["piedra", "papel", "tijeras"];
 
 function getComputerChoice() {
   // Obtener un valor aleatorio
@@ -70,28 +70,28 @@ function setWinner(playerChoice, computerChoice) {
   }
 
   if (
-    (playerChoice === "rock" && computerChoice === "scissors") ||
-    (playerChoice === "paper" && computerChoice === "rock") ||
-    (playerChoice === "scissors" && computerChoice === "paper")
+    (playerChoice === "piedra" && computerChoice === "tijeras") ||
+    (playerChoice === "papel" && computerChoice === "piedra") ||
+    (playerChoice === "tijeras" && computerChoice === "papel")
   ) {
     userScore++
+    result_class.innerHTML = "Ganaste, " + playerChoice + " contra " + computerChoice
     userScore_class.innerHTML = userScore
-    result_class.innerHTML = 'Ganaste'
     console.log('playerScore => ', userScore);
     console.log('pcScore => ', pcScore)
-    return "GANASTE";
+    return result_class;
   } else if (playerChoice === computerChoice) {
-    result_class.innerHTML = 'Empataste'
+    result_class.innerHTML = "Empate! " + playerChoice + " contra " + computerChoice
     console.log('playerScore => ', userScore);
     console.log('pcScore => ', pcScore)
-    return "EMPATASTE";
+    return result_class;
   } else {
-    result_class.innerHTML = 'Perdiste'
+    result_class.innerHTML = "Perdiste, " + playerChoice + " contra " + computerChoice
     pcScore++
     pcScore_class.innerHTML = pcScore
     console.log('playerScore => ', userScore);
     console.log('pcScore => ', pcScore)
-    return "PERDISTE";
+    return result_class;
   }
 
 }
